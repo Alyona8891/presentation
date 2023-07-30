@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<title>Presentation</title>
 
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
@@ -16,8 +16,72 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide my 1</section>
-				<section>Slide 2</section>
+				<section data-auto-animate>
+					<h2>Presentation</h2>
+					<p class="fragment">Theme: "SOLID principles"</p>
+				</section>
+				<section data-auto-animate>
+					<h2>Introduction</h2>
+					<p>In software engineering, SOLID is a mnemonic acronym for five design principles intended to make object-oriented designs more understandable, flexible, and maintainable. They were made popular by a software engineer, Robert C. Martin.</p>
+				</section>
+				<section data-auto-animate>
+					<ul style="font-size: 60px; text-align: center;">SOLID principles
+						<li class="fragment" style="text-align: left;"><span style="color: red;">S</span>ingle-responsibility principle</li>
+						<li class="fragment" style="text-align: left;"><span style="color: red;">O</span>pen–closed principle</li>
+						<li class="fragment" style="text-align: left;"><span style="color: red;">L</span>iskov substitution principle</li>
+						<li class="fragment" style="text-align: left;"><span style="color: red;">I</span>nterface segregation principle</li>
+						<li class="fragment" style="text-align: left;"><span style="color: red;">D</span>ependency inversion principle</li>
+					</ul>
+				</section>
+				<section data-auto-animate>
+					<p style="font-size: 60px;">Single responsibility principle</p>
+				</section>
+				<section data-auto-animate>
+					<p style="font-size: 60px;">Single responsibility principle</p>
+					<p style="font-size: 30px;">"There should never be more than one reason for a class to change."</p>
+				</section>
+				<section data-auto-animate>
+					<p style="font-size: 60px;">Single responsibility principle</p>
+					<p style="font-size: 30px;">"There should never be more than one reason for a class to change."</p>
+					<img style="max-width: 60%; max-height: 60%;" src="/images/1.png" alt="image of single responsibility principle">
+				</section>
+				<section data-auto-animate>
+					<p style="font-size: 60px;">Single responsibility principle</p>
+					<p style="font-size: 30px; color: red">Bad Practice:</p>
+					<pre>
+						<code style="font-size: 20px;">>
+							class Student {
+
+								registerStudent() {
+									// some logic
+								}
+						   
+								calculate_Student_Results() {
+									// some logic
+								}
+
+							}
+						</code>
+					</pre>
+				</section>
+				<section data-auto-animate>
+					<p style="font-size: 60px;">Single responsibility principle</p>
+					<p style="font-size: 30px; color: green;">Good Practice:</p>
+					<pre>
+						<code style="font-size: 20px;">>
+							class StudentRegister {
+								registerStudent() {
+									// some logic
+								}
+							}
+							class StudentResult {
+								calculate_Student_Result() {
+									// some logic
+								}
+							}
+						</code>
+					</pre>
+				</section>
 			</div>
 		</div>
 
