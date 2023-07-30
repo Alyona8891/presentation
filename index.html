@@ -22,7 +22,7 @@
 				</section>
 				<section data-auto-animate>
 					<h2>Introduction</h2>
-					<p>In software engineering, SOLID is a mnemonic acronym for five design principles intended to make object-oriented designs more understandable, flexible, and maintainable. They were made popular by a software engineer, Robert C. Martin.</p>
+					<p>In software engineering, SOLID is a mnemonic acronym for five design principles intended to make object-oriented designs more understandable and flexible. They were made popular by a software engineer, Robert C. Martin.</p>
 				</section>
 				<section data-auto-animate>
 					<ul style="font-size: 60px; text-align: center;">SOLID principles
@@ -49,7 +49,7 @@
 					<p style="font-size: 60px;">Single responsibility principle</p>
 					<p style="font-size: 30px; color: red">Bad Practice:</p>
 					<pre>
-						<code style="font-size: 20px;">>
+						<code style="font-size: 20px;">
 							class Student {
 
 								registerStudent() {
@@ -68,7 +68,7 @@
 					<p style="font-size: 60px;">Single responsibility principle</p>
 					<p style="font-size: 30px; color: green;">Good Practice:</p>
 					<pre>
-						<code style="font-size: 20px;">>
+						<code style="font-size: 20px;">
 							class StudentRegister {
 								registerStudent() {
 									// some logic
@@ -81,6 +81,293 @@
 							}
 						</code>
 					</pre>
+				</section>
+				<section data-auto-animate>
+					<p style="font-size: 60px;"> Open–closed principle</p>
+				</section>
+				<section data-auto-animate>
+					<p style="font-size: 60px;"> Open–closed principle</p>
+					<p style="font-size: 30px;">"Software entities ... should be open for extension, but closed for modification."</p>
+				</section>
+				<section data-auto-animate>
+					<p style="font-size: 60px;"> Open–closed principle</p>
+					<p style="font-size: 30px;">"Software entities ... should be open for extension, but closed for modification."</p>
+					<img style="max-width: 60%; max-height: 60%;" src="/images/2.png" alt="image of open–closed principle">
+				</section>
+				<section data-auto-animate>
+					<p style="font-size: 60px;">Open–closed principle</p>
+					<p style="font-size: 30px; color: red">Bad Practice:</p>
+					<pre>
+						<code style="font-size: 20px;">
+							class Human {
+								constructor() {
+								  this.height = 0;
+								  this.weight = 0;
+								  this.gender = 'male';
+								}
+								setGender(gender) {
+									this.gender = gender;
+								}
+							}
+						</code>
+					</pre>
+				</section>
+
+				<section data-auto-animate>
+					<p style="font-size: 60px;">Open-closed principle</p>
+					<p style="font-size: 30px; color: green;">Good Practice:</p>
+					<pre>
+						<code style="font-size: 20px;">
+							class Human {
+								constructor(height, weight) {
+								  this.height = height;
+								  this.weight = weight;
+								}
+							}
+							class Male extends Human {
+								constructor(height, weight) {
+								  super(height, weight);
+								  this.gender = 'male';
+								}
+							}
+						</code>
+					</pre>
+				</section>
+
+				<section data-auto-animate>
+					<p style="font-size: 60px;">Liskov Substitution principle</p>
+				</section>
+				<section data-auto-animate>
+					<p style="font-size: 60px;">Liskov Substitution principle</p>
+					<p style="font-size: 30px;">"Functions that use pointers or references to base classes must be able to use objects of derived classes without knowing it."</p>
+				</section>
+				<section data-auto-animate>
+					<p style="font-size: 60px;">Liskov Substitution principle</p>
+					<p style="font-size: 30px;">"Functions that use pointers or references to base classes must be able to use objects of derived classes without knowing it."</p>
+					<img style="max-width: 55%; max-height: 55%;" src="/images/3.png" alt="image of liskov Substitution principle">
+				</section>
+				<section data-auto-animate>
+					<p style="font-size: 60px;">Liskov Substitution principle</p>
+					<p style="font-size: 30px; color: red">Bad Practice:</p>
+					<pre>
+						<code style="font-size: 20px;">
+							class Rectangle {
+								constructor(width, height) {
+								  this.width = width;
+								  this.height = height;
+								}
+							  
+								area() {
+								  return this.width * this.height;
+								}
+							}
+							  
+							class Square extends Rectangle {
+								constructor(size) {
+								  super(size, size);
+								}
+							  
+								setWidth(width) {
+								  this.width = width;
+								  this.height = width;
+								}
+							  
+								setHeight(height) {
+								  this.width = height;
+								  this.height = height;
+								}
+							}
+						</code>
+					</pre>
+				</section>
+				<section data-auto-animate>
+					<p style="font-size: 60px;">Liskov Substitution principle</p>
+					<p style="font-size: 30px; color: green;">Good Practice:</p>
+					<pre>
+						<code style="font-size: 20px;">
+							class Shape {
+								area() {
+								  throw new Error('Not implemented');
+								}
+							}
+							  
+							class Rectangle extends Shape {
+								constructor(width, height) {
+								  super();
+								  this.width = width;
+								  this.height = height;
+								}
+							  
+								area() {
+								  return this.width * this.height;
+								}
+							}
+							  
+							class Square extends Shape {
+								constructor(size) {
+								  super();
+								  this.size = size;
+								}
+							  
+								area() {
+								  return this.size ** 2;
+								}
+							}
+						</code>
+					</pre>
+				</section>
+				<section data-auto-animate>
+					<p style="font-size: 60px;">Interface segregation principle</p>
+				</section>
+				<section data-auto-animate>
+					<p style="font-size: 60px;">Interface segregation principle</p>
+					<p style="font-size: 30px;">"Clients should not be forced to depend upon interfaces that they do not use."</p>
+				</section>
+				<section data-auto-animate>
+					<p style="font-size: 60px;">Interface segregation principle</p>
+					<p style="font-size: 30px;">"Clients should not be forced to depend upon interfaces that they do not use."</p>
+					<img style="max-width: 100%; max-height: 100%;" src="/images/4.png" alt="image of liskov Substitution">
+				</section>
+				<section data-auto-animate>
+					<p style="font-size: 60px;">Interface segregation principle</p>
+					<p style="font-size: 30px; color: red">Bad Practice:</p>
+					<pre>
+						<code style="font-size: 20px;">
+							class Animal {
+								constructor(name) {
+								  this.name = name;
+								}
+							  
+								eat() {
+									// some logic
+								}
+							  
+								sleep() {
+									// some logic
+								}
+							  
+								fly() {
+									// some logic
+								}
+							}
+							  
+							class Bird extends Animal {}
+							  
+							class Dog extends Animal {
+								fly() {
+									// some logic
+								}
+							}
+						</code>
+					</pre>
+				</section>
+				<section data-auto-animate>
+					<p style="font-size: 60px;">Interface segregation principle</p>
+					<p style="font-size: 30px; color: green;">Good Practice:</p>
+					<pre>
+						<code style="font-size: 20px;">
+							class Animal {
+								constructor(name) {
+								  this.name = name;
+								}
+							  
+								eat() {
+									// some logic
+								}
+							  
+								sleep() {
+									// some logic
+								}
+							}
+							  
+							class Bird extends Animal {
+								fly() {
+									// some logic
+								}
+							}
+							  
+							class Dog extends Animal {}
+						</code>
+					</pre>
+				</section>
+				<section data-auto-animate>
+					<p style="font-size: 60px;">Dependency inversion principle</p>
+				</section>
+				<section data-auto-animate>
+					<p style="font-size: 60px;">Dependency inversion principle</p>
+					<p style="font-size: 30px;">"Depend upon abstractions, [not] concretions."</p>
+				</section>
+				<section data-auto-animate>
+					<p style="font-size: 60px;">Dependency inversion principle</p>
+					<p style="font-size: 30px;">"Depend upon abstractions, [not] concretions."</p>
+					<img style="max-width: 80%; max-height: 80%;" src="/images/5.png" alt="Dependency inversion principle">
+				</section>
+				<section data-auto-animate>
+					<p style="font-size: 60px;">Dependency inversion principle</p>
+					<p style="font-size: 30px; color: red">Bad Practice:</p>
+					<pre>
+						<code style="font-size: 20px;">
+							class UserService {
+								constructor() {
+								  this.db = new Database();
+								}
+							  
+								getUser(id) {
+								  return this.db.getUser(id);
+								}
+							}
+							  
+							class Database {
+								getUser(id) {
+									// some logic
+								}
+							}
+						</code>
+					</pre>
+				</section>
+				<section data-auto-animate>
+					<p style="font-size: 60px;">Dependency inversion principle</p>
+					<p style="font-size: 30px; color: green;">Good Practice:</p>
+					<pre>
+						<code style="font-size: 20px;">
+							class UserService {
+								constructor(database) {
+								  this.db = database;
+								}
+							  
+								getUser(id) {
+								  return this.db.getUser(id);
+								}
+							}
+							  
+							class Database {
+								getUser(id) {
+								  // code to get user from database
+								}
+							}
+						</code>
+					</pre>
+				</section>
+				<section data-auto-animate>
+					<ul style="font-size: 60px; text-align: center;">Sources
+						<li style="text-align: left;">
+							<a href="http://en.wikipedia.org/" target="_blank">
+								Wikipedia
+							</a>
+						</li>
+						<li style="text-align: left;">
+							<a href="https://medium.com/backticks-tildes/the-s-o-l-i-d-principles-in-pictures-b34ce2f1e898" target="_blank">
+								Interesting article with pictures
+							</a>
+						</li>
+						<li style="text-align: left;">
+							<a href="https://www.freecodecamp.org/news/solid-principles-single-responsibility-principle-explained/" target="_blank">Interesting article
+							</a>
+						</li>
+					</ul>
+				</section>
+				<section data-auto-animate>
+					<h1>THE END</h1>
 				</section>
 			</div>
 		</div>
