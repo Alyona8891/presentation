@@ -266,10 +266,27 @@
 					<p style="font-size: 30px; color: green;">Good Practice:</p>
 					<pre>
 						<code style="font-size: 20px;">
-							<script type="text/template">
-
-							</script>
-							
+							class Animal {
+								constructor(name) {
+								  this.name = name;
+								}
+							  
+								eat() {
+									// some logic
+								}
+							  
+								sleep() {
+									// some logic
+								}
+							}
+							  
+							class Bird extends Animal {
+								fly() {
+									// some logic
+								}
+							}
+							  
+							class Dog extends Animal {}
 						</code>
 					</pre>
 				</section>
